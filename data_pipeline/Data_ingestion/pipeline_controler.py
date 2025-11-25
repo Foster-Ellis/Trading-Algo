@@ -27,4 +27,6 @@ async def main():
     controller = PipelineController()
     await controller.ws_client.run()
 
-asyncio.run(main())
+
+if __name__ == "__main__":
+    asyncio.run(main())
