@@ -4,7 +4,7 @@ import os
 import random
 import websockets
 from dotenv import load_dotenv
-from alpaca_message_handler import AlpacaMessageHandler
+from ingestion.alpaca_message_handler import AlpacaMessageHandler
 
 load_dotenv()
 

@@ -12,6 +12,7 @@ class PipelineController:
         Called by alpaca_news_client whenever new news arrives.
         """
         # hash → dataframe → write to CH
+        print("[TEST] News received:", msg)
 
 
 async def main():
