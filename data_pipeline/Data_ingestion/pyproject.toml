@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "clickhouse-driver>=0.2.10",
+    "clickhouse-connect>=0.10.0",
     "dotenv>=0.9.9",
     "websockets>=15.0.1",
 ]

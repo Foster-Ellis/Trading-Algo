@@ -2,8 +2,11 @@ import json
 import time
 from datetime import datetime
 import os
+from dotenv import load_dotenv
 
 from utils.logging_config import get_logger
+
+load_dotenv()
 
 MESSAGE_RATE_WINDOW = int(os.getenv("MESSAGE_RATE_WINDOW", "10"))
 MESSAGE_RATE_THRESHOLD = int(os.getenv("MESSAGE_RATE_THRESHOLD", "1000"))
