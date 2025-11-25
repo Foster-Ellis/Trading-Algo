@@ -1,1 +1,134 @@
 2025-11-25 12:31:00 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:20:21,874 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:20:26,623 [INFO] pipeline: News received | id=49054129 | hash=7095b182f2f6
+2025-11-25 14:21:24,152 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:22:06,465 [INFO] pipeline: News received | id=49054144 | hash=33f95362a02a
+2025-11-25 14:22:17,759 [INFO] pipeline: News received | id=49054146 | hash=d678bdb7d257
+2025-11-25 14:22:38,782 [INFO] pipeline: News received | id=49054149 | hash=c27afdda53f1
+2025-11-25 14:24:00,436 [INFO] pipeline: News received | id=49054153 | hash=1f111026f6b5
+2025-11-25 14:24:39,502 [INFO] pipeline: News received | id=49054154 | hash=ad3b63dc69f2
+2025-11-25 14:26:02,142 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:26:33,869 [INFO] pipeline: News received | id=49054160 | hash=55aa00406563
+2025-11-25 14:27:03,781 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:27:12,098 [INFO] pipeline: News received | id=49054169 | hash=9af8916e6587
+2025-11-25 14:36:11,067 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:36:11,068 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:36:12,584 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:36:18,166 [INFO] pipeline: News received | id=49054270 | hash=0e34aa78851f
+2025-11-25 14:36:22,758 [INFO] pipeline: News received | id=49054329 | hash=b8aa4b931b66
+2025-11-25 14:37:00,860 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:37:00,861 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:37:01,381 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:37:07,255 [INFO] pipeline: News received | id=49054270 | hash=0e34aa78851f
+2025-11-25 14:37:18,516 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:37:18,517 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:37:18,985 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:37:40,270 [INFO] pipeline: News received | id=49054353 | hash=1ef68ee0050a
+2025-11-25 14:37:51,752 [INFO] pipeline: News received | id=49054354 | hash=f0c4c33d740e
+2025-11-25 14:38:51,695 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:38:51,696 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:38:52,156 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:40:31,113 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:40:31,114 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:40:31,600 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:40:45,816 [INFO] pipeline: News received | id=49054392 | hash=f5f38dbe57f3
+2025-11-25 14:41:40,339 [INFO] pipeline: News received | id=49054409 | hash=7e3d55a15507
+2025-11-25 14:42:13,763 [INFO] pipeline: News received | id=49054410 | hash=3ea75b5b0a2e
+2025-11-25 14:48:47,020 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:48:47,020 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:48:47,559 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:50:05,693 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:50:05,694 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:50:06,155 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:50:39,398 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:50:39,398 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:50:39,868 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:51:39,114 [INFO] pipeline: News received | id=49054716 | hash=815ac5d1d0ee
+2025-11-25 14:53:38,954 [INFO] pipeline: PipelineController initialized.
+2025-11-25 14:53:38,955 [DEBUG] ws-client: Connecting to wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 14:53:39,453 [DEBUG] ws-client: Connected → Authenticating...
+2025-11-25 14:53:39,618 [DEBUG] ws-message-handler: Raw message received: [{"T":"subscription","news":["*"]}]
+2025-11-25 15:17:06,067 [INFO] pipeline: PipelineController initialized.
+2025-11-25 15:17:06,067 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 15:17:06,548 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-25 15:17:06,549 [DEBUG] ws-client: Auth response: [{"T":"success","msg":"connected"}]
+2025-11-25 15:17:06,637 [DEBUG] ws-client: Subscription response: [{"T":"success","msg":"authenticated"}]
+2025-11-25 15:17:06,638 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-25 15:17:06,715 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"subscription","news":["*"]}]
+2025-11-25 15:17:06,716 [DEBUG] ws-message-handler: Non-news message ignored
+2025-11-25 15:17:13,889 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49055545,"headline":"Tempest Therapeutics shares are trading lower after the company announced a $4.25 million offering.","summary":"","author":"Benzinga Newsdesk","created_at":"2025-11-25T14:17:12Z","updated_at":"2025-11-25T14:17:13Z","url":"https://www.benzinga.com/wiim/25/11/490555
+2025-11-25 15:17:13,890 [DEBUG] ws-message-handler: News message parsed | id=49055545 symbols=['TPST']
+2025-11-25 15:17:13,891 [DEBUG] ws-message-handler: Message rate = 1/window(5s)
+2025-11-25 15:17:13,892 [INFO] pipeline: News received | id=49055545 | hash=0b7ab05b4079
+2025-11-25 15:17:48,008 [INFO] pipeline: PipelineController initialized.
+2025-11-25 15:17:48,008 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-25 15:17:48,470 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-25 15:17:48,475 [DEBUG] ws-client: Auth response: [{"T":"success","msg":"connected"}]
+2025-11-25 15:17:48,558 [DEBUG] ws-client: Subscription response: [{"T":"success","msg":"authenticated"}]
+2025-11-25 15:17:48,558 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-25 15:17:48,637 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"subscription","news":["*"]}]
+2025-11-25 15:17:48,637 [DEBUG] ws-message-handler: Non-news message ignored
+2025-11-25 15:18:19,065 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49055570,"headline":"\u0026#39;China Unveils 3D Heterogeneous Integration Chip To Challenge Nvidia\u0026#39;s 4nm AI Computing Power\u0026#39; - DigiTimes Alert","summary":"At the ICC Global CEO Summit, Professor Wei Shaojun revealed China\u0026#39;s breakthrough in AI computing using
+2025-11-25 15:18:19,065 [DEBUG] ws-message-handler: News message parsed | id=49055570 symbols=['FXI', 'NVDA']
+2025-11-25 15:18:19,066 [DEBUG] ws-message-handler: Message rate = 1/window(5s)
+2025-11-25 15:18:19,066 [DEBUG] pipeline: Handling news ID=49055570
+2025-11-25 15:18:19,066 [DEBUG] pipeline: Hash computed: fa1f718c51557489132340ff439f993b50041c4fdb2a475a5ae497f39308a17a
+2025-11-25 15:18:19,067 [INFO] pipeline: News received | id=49055570 | hash=fa1f718c5155
+2025-11-25 15:18:34,209 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49055572,"headline":"Silexion Therapeutics Completes SIL204 Toxicology Studies Ahead Of Planned Phase 2/3 Trial","summary":"","author":"Benzinga Newsdesk","created_at":"2025-11-25T14:18:32Z","updated_at":"2025-11-25T14:18:33Z","url":"https://www.benzinga.com/general/biotech/25/11/4905
+2025-11-25 15:18:34,211 [DEBUG] ws-message-handler: News message parsed | id=49055572 symbols=['SLXN']
+2025-11-25 15:18:34,212 [DEBUG] ws-message-handler: Message rate = 1/window(5s)
+2025-11-25 15:18:34,212 [DEBUG] pipeline: Handling news ID=49055572
+2025-11-25 15:18:34,213 [DEBUG] pipeline: Hash computed: 6384a110635672d7f494edf39c4ce90bb2553cae4483b4297f6f5d2f73294a5b
+2025-11-25 15:18:34,213 [INFO] pipeline: News received | id=49055572 | hash=6384a1106356
+2025-11-25 15:18:36,618 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49055573,"headline":"Kartoon Studios Collaborates With Shriners Children\u0026#39;s For Access To Kartoon Channel!, Ameba TV Across Shriners Children\u0026#39;s Locations Globally","summary":"Kartoon Studios, Inc. (NYSE:TOON), a global leader in children\u0026#39;s entertainment, toda
+2025-11-25 15:18:36,623 [DEBUG] ws-message-handler: News message parsed | id=49055573 symbols=['TOON']
+2025-11-25 15:18:36,624 [DEBUG] ws-message-handler: Message rate = 2/window(5s)
+2025-11-25 15:18:36,624 [DEBUG] pipeline: Handling news ID=49055573
+2025-11-25 15:18:36,624 [DEBUG] pipeline: Hash computed: aa32bb28c48c45df72dfc645432d033b22945b7897ffd7c28efd744bb1452d45
+2025-11-25 15:18:36,624 [INFO] pipeline: News received | id=49055573 | hash=aa32bb28c48c
+2025-11-25 15:18:47,455 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49055575,"headline":"UBS Upgrades Applied Mat to Buy, Raises Price Target to $285","summary":"UBS  analyst Timothy Arcuri   upgrades Applied Mat (NASDAQ:AMAT) from Neutral to Buy and raises the price target from $250 to $285.","author":"Benzinga Newsdesk","created_at":"2025-11-25T14:1
+2025-11-25 15:18:47,456 [DEBUG] ws-message-handler: News message parsed | id=49055575 symbols=['AMAT']
+2025-11-25 15:18:47,456 [DEBUG] ws-message-handler: Message rate = 1/window(5s)
+2025-11-25 15:18:47,457 [DEBUG] pipeline: Handling news ID=49055575
+2025-11-25 15:18:47,457 [DEBUG] pipeline: Hash computed: b9208c9f18ac6391d7db02b3236a8e36da834ebb2e6805eb40f6bcf331abfbe5
+2025-11-25 15:18:47,457 [INFO] pipeline: News received | id=49055575 | hash=b9208c9f18ac
+2025-11-25 15:19:08,354 [INFO] pipeline: PipelineController initialized.
+2025-11-25 15:19:08,950 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-25 15:19:24,763 [INFO] pipeline: News received | id=49055579 | hash=1f77b3c9c1b6
+2025-11-25 15:19:24,871 [INFO] pipeline: News received | id=49055580 | hash=74ff20b7dcad
+2025-11-25 15:19:34,908 [INFO] pipeline: News received | id=49055581 | hash=5e97fbd207fe
+2025-11-25 15:19:56,074 [INFO] pipeline: News received | id=49055584 | hash=a1c1494927f4
+2025-11-25 15:20:33,805 [INFO] pipeline: News received | id=49055588 | hash=327f188b78f4
+2025-11-25 15:20:55,008 [INFO] pipeline: News received | id=49055591 | hash=905a500e8ec3
+2025-11-25 15:21:28,960 [INFO] pipeline: News received | id=49055594 | hash=320afc9d499f
+2025-11-25 15:22:30,063 [INFO] pipeline: News received | id=49055606 | hash=2f6260eabbab
+2025-11-25 15:23:12,634 [INFO] pipeline: News received | id=49055608 | hash=67b385433991
+2025-11-25 15:24:06,569 [INFO] pipeline: News received | id=49055618 | hash=a4c9291bf257
+2025-11-25 15:24:35,085 [INFO] pipeline: News received | id=49055627 | hash=a7ab9c27c5a2
+2025-11-25 15:26:04,493 [INFO] pipeline: News received | id=49055644 | hash=36e9c9c64626
+2025-11-25 15:26:28,308 [INFO] pipeline: News received | id=49055655 | hash=d08afe60849b
+2025-11-25 15:26:37,709 [INFO] pipeline: News received | id=49055591 | hash=905a500e8ec3
+2025-11-25 15:27:16,308 [INFO] pipeline: News received | id=49055658 | hash=97209e08b926
+2025-11-25 15:27:27,218 [INFO] pipeline: News received | id=49055660 | hash=c187cb55dd19
+2025-11-25 15:28:32,916 [INFO] pipeline: News received | id=49055662 | hash=bd4a0b63cafb
+2025-11-25 15:29:24,892 [INFO] pipeline: News received | id=49055671 | hash=9c113ce63342
+2025-11-25 15:30:09,951 [INFO] pipeline: News received | id=49055685 | hash=0553eda999b7
+2025-11-25 15:30:15,279 [INFO] pipeline: News received | id=49055687 | hash=da2e7d93dda5
+2025-11-25 15:30:35,690 [INFO] pipeline: News received | id=49055708 | hash=4aac85603296
+2025-11-25 15:30:50,035 [INFO] pipeline: News received | id=49055729 | hash=3d3cf24099c7
+2025-11-25 15:31:06,040 [INFO] pipeline: News received | id=49055738 | hash=6b9204bc3605
+2025-11-25 15:32:33,693 [INFO] pipeline: News received | id=49055756 | hash=c5d2737f008a
+2025-11-25 15:32:41,404 [INFO] pipeline: News received | id=49055767 | hash=945032ef0b72
+2025-11-25 15:32:58,058 [INFO] pipeline: News received | id=49055769 | hash=787c7359e33d
+2025-11-25 15:34:32,435 [INFO] pipeline: News received | id=49055777 | hash=0f547f479007
+2025-11-25 15:34:50,922 [INFO] pipeline: News received | id=49054718 | hash=0fd67fab0995
+2025-11-25 15:37:23,233 [INFO] pipeline: News received | id=49055982 | hash=0596abcda308
+2025-11-25 15:40:17,017 [INFO] pipeline: News received | id=49056172 | hash=60e5238f32b7
+2025-11-25 15:41:38,486 [INFO] pipeline: News received | id=49056282 | hash=2e5c4f403f3e
+2025-11-25 15:44:03,463 [INFO] pipeline: News received | id=49056466 | hash=a48051e49708
+2025-11-25 15:44:06,928 [INFO] pipeline: News received | id=49056471 | hash=8fced05fe244
+2025-11-25 15:44:20,384 [INFO] pipeline: News received | id=49056479 | hash=fd049cc85f66
+2025-11-25 15:45:01,747 [INFO] pipeline: News received | id=49056517 | hash=29e7af762cf8
+2025-11-25 15:45:38,268 [INFO] pipeline: News received | id=49056730 | hash=a885e972c07e
+2025-11-25 15:45:44,361 [INFO] pipeline: News received | id=49056739 | hash=1e90922127bf
+2025-11-25 15:46:11,317 [INFO] pipeline: News received | id=49056774 | hash=0a085e0ef214

@@ -5,7 +5,6 @@ import os
 
 from utils.logging_config import get_logger
 
-
 MESSAGE_RATE_WINDOW = int(os.getenv("MESSAGE_RATE_WINDOW", "10"))
 MESSAGE_RATE_THRESHOLD = int(os.getenv("MESSAGE_RATE_THRESHOLD", "1000"))
 
@@ -17,9 +16,6 @@ class AlpacaMessageHandler:
         self.controller = controller
         self.message_times = []  # timestamps for rate calculation
 
-    # ---------------------------------------------------------
-    # Debug printing helper
-    # ---------------------------------------------------------
 
     # ---------------------------------------------------------
     # Rate monitoring
@@ -33,40 +29,43 @@ class AlpacaMessageHandler:
         self.message_times = [t for t in self.message_times if t >= cutoff]
 
         rate = len(self.message_times)
+        logger.debug(f"Message rate = {rate}/window({MESSAGE_RATE_WINDOW}s)")
 
         if rate > MESSAGE_RATE_THRESHOLD:
-            print(f"[WARN] High message rate detected: {rate} msgs in last {MESSAGE_RATE_WINDOW}s")
+            logger.warning(
+                f"High message rate: {rate} msgs in last {MESSAGE_RATE_WINDOW}s"
+            )
 
     # ---------------------------------------------------------
     # Message handler (called from alpaca_news_client)
     # ---------------------------------------------------------
     async def handle(self, raw_message):
+        logger.debug(f"Raw WS message received: {raw_message[:300]}")
+
         """
         Parse raw websocket message (string), filter for news,
         augment metadata, rate-track, and forward to controller.
         """
-        logger.debug(f"Raw message received: {raw_message}")
-
         try:
             data = json.loads(raw_message)
         except json.JSONDecodeError:
-            print("[WARN] Failed to decode JSON message")
+            logger.warning("Failed to decode JSON message")
             return
 
         messages = data if isinstance(data, list) else [data]
 
         for msg in messages:
-            msg_type = msg.get("T")
-            if msg_type != "n":  
-                continue  # ignore non-news messages
+            if msg.get("T") != "n":
+                logger.debug("Non-news message ignored")
+                continue
+
+            logger.debug(f"News message parsed | id={msg.get('id')} symbols={msg.get('symbols')}")
 
             msg["ingested_at"] = datetime.utcnow().isoformat()
-
             self._track_rate()
 
-            # Pass to PipelineController
             try:
                 await self.controller.handle_news(msg)
             except Exception as e:
-                print("[ERROR] Failed to process news:", e)
+                logger.error(f"Failed to process news message: {e}")
                 continue

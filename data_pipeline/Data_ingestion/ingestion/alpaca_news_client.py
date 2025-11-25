@@ -5,10 +5,8 @@ import random
 import websockets
 from dotenv import load_dotenv
 
-
 from ingestion.alpaca_message_handler import AlpacaMessageHandler
 from utils.logging_config import get_logger
-
 
 load_dotenv()
 
@@ -41,7 +39,7 @@ class AlpacaNewsClient:
     # WebSocket events
     # --------------------------------------------------------
     async def on_open(self):
-        self.debug("Connected → Authenticating...")
+        self.debug("WS opened → Authenticating")
 
         try:
             await self.ws.send(json.dumps({
@@ -50,45 +48,41 @@ class AlpacaNewsClient:
                 "secret": API_SECRET
             }))
 
-            
             auth_response = await asyncio.wait_for(self.ws.recv(), timeout=10)
-            auth_data = json.loads(auth_response)
-            print("[WS] Auth response:", auth_data)
+            logger.debug(f"Auth response: {auth_response}")
 
         except asyncio.TimeoutError:
-            raise Exception("Authentication timeout")
-        
+            logger.error("Authentication timeout")
+            raise
+
         try:
             await self.ws.send(json.dumps({
                 "action": "subscribe",
                 "news": ["*"]
             }))
 
-            
             sub_response = await asyncio.wait_for(self.ws.recv(), timeout=10)
-            print("[WS] Subscription response:", json.loads(sub_response))
+            logger.debug(f"Subscription response: {sub_response}")
 
         except asyncio.TimeoutError:
-            raise Exception("Subscription timeout")
+            logger.error("Subscription timeout")
+            raise
 
-        print("[WS] Authenticated + Subscribed")
+        logger.info("Authenticated + Subscribed to *")
 
     async def on_message(self, raw):
         await self.handler.handle(raw)
 
     async def on_error(self, error):
-        print("[WS ERROR]", error)
+        logger.error(f"WS error: {error}")
 
-    async def on_close(self):
-        print("[WS] Connection closed")
+    async def on_close(self, code=None, reason=None):
+        logger.info(f"WS closed | code={code} reason={reason}")
 
-    # --------------------------------------------------------
-    # Main loop with reconnect + jitter
-    # --------------------------------------------------------
     async def run(self):
         while self.running:
             try:
-                self.debug(f"Connecting to {NEWS_URL}")
+                logger.debug(f"WS connecting → {NEWS_URL}")
 
                 async with websockets.connect(
                     NEWS_URL,
@@ -110,23 +104,13 @@ class AlpacaNewsClient:
 
                 self.retry_count += 1
                 delay = min(RECONNECT_DELAY * (2 ** (self.retry_count - 1)), MAX_RECONNECT_DELAY)
-                delay += random.uniform(0, 1.0)  # jitter
+                delay += random.uniform(0, 1.0)
 
-                print(f"[WS] Reconnecting in {delay:.1f} seconds...")
+                logger.warning(
+                    f"WS reconnecting in {delay:.1f}s "
+                    f"(attempt #{self.retry_count})"
+                )
                 await asyncio.sleep(delay)
 
         await self.on_close()
 
-
-# --------------------------------------------------------
-# Standalone test mode
-# --------------------------------------------------------
-if __name__ == "__main__":
-    class DummyController:
-        async def handle_news(self, msg):
-            print("[TEST] News received:")
-            print(json.dumps(msg, indent=2))
-
-    dummy = DummyController()
-    client = AlpacaNewsClient(dummy)
-    asyncio.run(client.run())
