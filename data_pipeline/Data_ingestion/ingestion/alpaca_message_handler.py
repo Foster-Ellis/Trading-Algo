@@ -3,9 +3,13 @@ import time
 from datetime import datetime
 import os
 
+from utils.logging_config import get_logger
+
+
 MESSAGE_RATE_WINDOW = int(os.getenv("MESSAGE_RATE_WINDOW", "10"))
 MESSAGE_RATE_THRESHOLD = int(os.getenv("MESSAGE_RATE_THRESHOLD", "1000"))
-DEBUG_MODE = os.getenv("DEBUG_MODE", "false").lower() == "true"
+
+logger = get_logger("ws-message-handler")
 
 
 class AlpacaMessageHandler:
@@ -16,9 +20,6 @@ class AlpacaMessageHandler:
     # ---------------------------------------------------------
     # Debug printing helper
     # ---------------------------------------------------------
-    def debug(self, *args):
-        if DEBUG_MODE:
-            print("[DEBUG]", *args)
 
     # ---------------------------------------------------------
     # Rate monitoring
@@ -44,7 +45,7 @@ class AlpacaMessageHandler:
         Parse raw websocket message (string), filter for news,
         augment metadata, rate-track, and forward to controller.
         """
-        self.debug("Raw message received:", raw_message)
+        logger.debug(f"Raw message received: {raw_message}")
 
         try:
             data = json.loads(raw_message)

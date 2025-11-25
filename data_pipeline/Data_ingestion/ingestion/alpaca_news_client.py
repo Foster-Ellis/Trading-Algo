@@ -4,7 +4,11 @@ import os
 import random
 import websockets
 from dotenv import load_dotenv
+
+
 from ingestion.alpaca_message_handler import AlpacaMessageHandler
+from utils.logging_config import get_logger
+
 
 load_dotenv()
 
@@ -19,7 +23,7 @@ WS_PING_INTERVAL = int(os.getenv("WS_PING_INTERVAL", "20"))
 WS_PING_TIMEOUT = int(os.getenv("WS_PING_TIMEOUT", "10"))
 WS_CLOSE_TIMEOUT = int(os.getenv("WS_CLOSE_TIMEOUT", "10"))
 
-DEBUG_MODE = os.getenv("DEBUG_MODE", "false").lower() == "true"
+logger = get_logger("ws-client")
 
 
 class AlpacaNewsClient:
@@ -31,8 +35,7 @@ class AlpacaNewsClient:
         self.retry_count = 0
 
     def debug(self, *args):
-        if DEBUG_MODE:
-            print("[DEBUG]", *args)
+        logger.debug(" ".join(str(a) for a in args))
 
     # --------------------------------------------------------
     # WebSocket events

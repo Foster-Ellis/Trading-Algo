@@ -1,12 +1,17 @@
 import asyncio
 
+
 from ingestion.alpaca_news_client import AlpacaNewsClient
 from processing.hashers import AlpacaNewsHasher
+from utils.logging_config import get_logger
 
+
+logger = get_logger("pipeline")
 
 class PipelineController:
     def __init__(self):
         #self.writer = ClickHouseWriter()
+        logger.info("PipelineController initialized.")
         self.ws_client = AlpacaNewsClient(controller=self)
 
     async def handle_news(self, msg: dict):
@@ -16,11 +21,9 @@ class PipelineController:
         """
         # 1. Compute hash
         hash_value = AlpacaNewsHasher.compute(msg)
+        logger.info(f"News received | id={msg.get('id')} | hash={hash_value[:12]}")
 
-        # DEBUG / temporary output
-        print("\n[PIPELINE] Incoming News Event")
-        print("Message:", msg)
-        print("Hash:", hash_value)
+
 
 
 async def main():
