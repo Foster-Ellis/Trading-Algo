@@ -8,8 +8,9 @@ from utils.logging_config import get_logger
 
 load_dotenv()
 
-MESSAGE_RATE_WINDOW = int(os.getenv("MESSAGE_RATE_WINDOW", "10"))
-MESSAGE_RATE_THRESHOLD = int(os.getenv("MESSAGE_RATE_THRESHOLD", "1000"))
+MESSAGE_RATE_WINDOW = int(os.getenv("MESSAGE_RATE_WINDOW"))
+MESSAGE_RATE_THRESHOLD = int(os.getenv("MESSAGE_RATE_THRESHOLD"))
+MESSAGE_RATE_COOLDOWN = int(os.getenv("MESSAGE_RATE_COOLDOWN"))
 
 logger = get_logger("ws-message-handler")
 
@@ -36,8 +37,11 @@ class AlpacaMessageHandler:
 
         if rate > MESSAGE_RATE_THRESHOLD:
             logger.warning(
-                f"High message rate: {rate} msgs in last {MESSAGE_RATE_WINDOW}s"
+                f"High message rate: {rate} msgs in last {MESSAGE_RATE_WINDOW}s "
+                f"(cooling down for {MESSAGE_RATE_COOLDOWN}s)"
             )
+            if MESSAGE_RATE_COOLDOWN > 0:
+                time.sleep(MESSAGE_RATE_COOLDOWN)
 
     # ---------------------------------------------------------
     # Message handler (called from alpaca_news_client)

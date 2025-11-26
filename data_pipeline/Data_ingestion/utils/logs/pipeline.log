@@ -146,3 +146,114 @@
 2025-11-25 16:25:44,128 [INFO] pipeline: News received | id=49059236 | hash=3bd19e12127a
 2025-11-25 16:26:22,685 [INFO] pipeline: News received | id=49059258 | hash=bae6dde56db6
 2025-11-25 16:26:54,343 [INFO] pipeline: News received | id=49059283 | hash=756727eee91e
+2025-11-26 14:54:13,838 [INFO] pipeline: PipelineController initialized.
+2025-11-26 14:54:13,838 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:54:14,242 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:54:14,244 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:54:14,330 [DEBUG] ws-client: Auth step 2: [{"T":"success","msg":"authenticated"}]
+2025-11-26 14:54:14,412 [DEBUG] ws-client: Subscribe response: [{"T":"subscription","news":["*"]}]
+2025-11-26 14:54:14,412 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 14:54:52,637 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082459,"headline":"Asiacell Partners With Cisco To Deploy AI-driven Provider Connectivity Assurance Platform On Its Network In Iraq","summary":"Asiacell, Iraq\u0026#39;s leading mobile network operator, today announced that it is joining forces with Cisco, the worldwide leader in ne
+2025-11-26 14:54:52,638 [DEBUG] ws-message-handler: News message parsed | id=49082459 symbols=['CSCO']
+2025-11-26 14:54:52,638 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:54:52,638 [DEBUG] pipeline: Handling news ID=49082459
+2025-11-26 14:54:52,638 [DEBUG] pipeline: Hash computed: 1bee09990b0ffe4c6a965036e976f597c8bea9cf969279f463c9445f5bac028b
+2025-11-26 14:54:52,639 [INFO] pipeline: News received | id=49082459 | hash=1bee09990b0f
+2025-11-26 14:55:10,915 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082463,"headline":"Trading Halt: Halt status updated at 8:55:00 AM ET: Quotation Resumption: News and Resumption Times","summary":"","author":"Benzinga Newsdesk","created_at":"2025-11-26T13:55:09Z","updated_at":"2025-11-26T13:55:10Z","url":"https://www.benzinga.com/25/11/49082463/tr
+2025-11-26 14:55:10,916 [DEBUG] ws-message-handler: News message parsed | id=49082463 symbols=['LGHL']
+2025-11-26 14:55:10,917 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:55:10,917 [DEBUG] pipeline: Handling news ID=49082463
+2025-11-26 14:55:10,918 [DEBUG] pipeline: Hash computed: 1aa627a4ec8203c21fe6a7a821b84412eb5ef86860cbb8de25aae214b626e7a4
+2025-11-26 14:55:10,919 [INFO] pipeline: News received | id=49082463 | hash=1aa627a4ec82
+2025-11-26 14:55:12,929 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082464,"headline":"Susquehanna Maintains Positive on Fluence Energy, Raises Price Target to $20","summary":"Susquehanna  analyst Biju Perincheril   maintains Fluence Energy (NASDAQ:FLNC) with a Positive and raises the price target from $17 to $20.","author":"Benzinga Newsdesk","crea
+2025-11-26 14:55:12,929 [DEBUG] ws-message-handler: News message parsed | id=49082464 symbols=['FLNC']
+2025-11-26 14:55:12,930 [DEBUG] ws-message-handler: Message rate = 2/window(10s)
+2025-11-26 14:55:12,930 [DEBUG] pipeline: Handling news ID=49082464
+2025-11-26 14:55:12,930 [DEBUG] pipeline: Hash computed: 35199b1216dc036608a8ee3a9250391cb347c8af66246394bc68a5299fe245af
+2025-11-26 14:55:12,930 [INFO] pipeline: News received | id=49082464 | hash=35199b1216dc
+2025-11-26 14:55:15,511 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082465,"headline":"RBC Capital Maintains Outperform on AAR, Raises Price Target to $90","summary":"RBC Capital  analyst Ken Herbert   maintains AAR (NYSE:AIR) with a Outperform and raises the price target from $85 to $90.","author":"Benzinga Newsdesk","created_at":"2025-11-26T13:55:
+2025-11-26 14:55:15,511 [DEBUG] ws-message-handler: News message parsed | id=49082465 symbols=['AIR']
+2025-11-26 14:55:15,512 [DEBUG] ws-message-handler: Message rate = 3/window(10s)
+2025-11-26 14:55:15,512 [DEBUG] pipeline: Handling news ID=49082465
+2025-11-26 14:55:15,512 [DEBUG] pipeline: Hash computed: 3ad734a5cd0aea78c5b4f91c00e39ad5b745bc08c8e238e27cd259c295ae3f37
+2025-11-26 14:55:15,512 [INFO] pipeline: News received | id=49082465 | hash=3ad734a5cd0a
+2025-11-26 14:55:24,113 [INFO] pipeline: PipelineController initialized.
+2025-11-26 14:55:24,114 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:55:24,503 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:55:24,503 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:55:24,585 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:55:24,585 [ERROR] ws-client: Authentication failed
+2025-11-26 14:55:24,670 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:55:24,670 [WARNING] ws-client: WS reconnecting in 2.2s (attempt #1)
+2025-11-26 14:55:26,857 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:55:27,219 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:55:27,220 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:55:27,301 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:55:27,301 [ERROR] ws-client: Authentication failed
+2025-11-26 14:55:27,383 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:55:27,383 [WARNING] ws-client: WS reconnecting in 4.8s (attempt #2)
+2025-11-26 14:55:32,200 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:55:32,561 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:55:32,562 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:55:32,643 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:55:32,644 [ERROR] ws-client: Authentication failed
+2025-11-26 14:55:32,726 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:55:32,726 [WARNING] ws-client: WS reconnecting in 8.4s (attempt #3)
+2025-11-26 14:55:41,102 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:55:41,464 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:55:41,465 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:55:41,549 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:55:41,549 [ERROR] ws-client: Authentication failed
+2025-11-26 14:55:41,634 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:55:41,635 [WARNING] ws-client: WS reconnecting in 17.0s (attempt #4)
+2025-11-26 14:55:58,639 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:55:59,013 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:55:59,014 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:55:59,096 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:55:59,096 [ERROR] ws-client: Authentication failed
+2025-11-26 14:55:59,182 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:55:59,183 [WARNING] ws-client: WS reconnecting in 32.2s (attempt #5)
+2025-11-26 14:56:31,428 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:56:31,781 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:56:31,781 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:56:31,862 [DEBUG] ws-client: Auth step 2: [{"T":"error","code":402,"msg":"auth failed"}]
+2025-11-26 14:56:31,862 [ERROR] ws-client: Authentication failed
+2025-11-26 14:56:31,944 [ERROR] ws-client: WS error: AUTH_FAILED
+2025-11-26 14:56:31,945 [WARNING] ws-client: WS reconnecting in 32.0s (attempt #6)
+2025-11-26 14:56:53,918 [INFO] pipeline: PipelineController initialized.
+2025-11-26 14:56:53,918 [DEBUG] ws-client: WS connecting → wss://stream.data.alpaca.markets/v1beta1/news
+2025-11-26 14:56:54,297 [DEBUG] ws-client: WS opened → Authenticating
+2025-11-26 14:56:54,297 [DEBUG] ws-client: Auth step 1: [{"T":"success","msg":"connected"}]
+2025-11-26 14:56:54,379 [DEBUG] ws-client: Auth step 2: [{"T":"success","msg":"authenticated"}]
+2025-11-26 14:56:54,459 [DEBUG] ws-client: Subscribe response: [{"T":"subscription","news":["*"]}]
+2025-11-26 14:56:54,460 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 14:56:56,352 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082476,"headline":"Kohl\u0026#39;s 43% Stock Surge Obliterates Shorts: Can Margin Gains Defy Retail Gloom?","summary":"Kohl\u0026#39;s stock (NYSE:KSS) surged 42% after reporting a surprise profit and raising guidance, causing a short squeeze.","author":"Surbhi Jain","created_at":"2
+2025-11-26 14:56:56,353 [DEBUG] ws-message-handler: News message parsed | id=49082476 symbols=['KSS', 'M']
+2025-11-26 14:56:56,353 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:56:56,353 [DEBUG] pipeline: Handling news ID=49082476
+2025-11-26 14:56:56,353 [DEBUG] pipeline: Hash computed: ce7b2f1a443aad48cb0da956ce1bcb35ec0b8c5ff745c576091538edb6cff64b
+2025-11-26 14:56:56,354 [INFO] pipeline: News received | id=49082476 | hash=ce7b2f1a443a
+2025-11-26 14:57:18,517 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082486,"headline":"RBC Capital Maintains Sector Perform on Amentum Holdings, Raises Price Target to $30","summary":"RBC Capital  analyst Ken Herbert   maintains Amentum Holdings (NYSE:AMTM) with a Sector Perform and raises the price target from $26 to $30.","author":"Benzinga Newsde
+2025-11-26 14:57:18,517 [DEBUG] ws-message-handler: News message parsed | id=49082486 symbols=['AMTM']
+2025-11-26 14:57:18,517 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:57:18,517 [DEBUG] pipeline: Handling news ID=49082486
+2025-11-26 14:57:18,518 [DEBUG] pipeline: Hash computed: f78bf340164019464ea2cd6a080890571b5722c83d2520a1934b9bd4fa1901f0
+2025-11-26 14:57:18,518 [INFO] pipeline: News received | id=49082486 | hash=f78bf3401640
+2025-11-26 14:57:31,836 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082488,"headline":"DDC Enterprise shares are trading higher after the company announced it acquired 100 Bitcoin.","summary":"","author":"Benzinga Newsdesk","created_at":"2025-11-26T13:57:30Z","updated_at":"2025-11-26T13:57:31Z","url":"https://www.benzinga.com/wiim/25/11/49082488/ddc
+2025-11-26 14:57:31,837 [DEBUG] ws-message-handler: News message parsed | id=49082488 symbols=['DDC']
+2025-11-26 14:57:31,837 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:57:31,838 [DEBUG] pipeline: Handling news ID=49082488
+2025-11-26 14:57:31,838 [DEBUG] pipeline: Hash computed: f58e76fa986bdbf71430f5cc19785a71b0b55e6f15d28f30d5774a076f95eb0a
+2025-11-26 14:57:31,838 [INFO] pipeline: News received | id=49082488 | hash=f58e76fa986b
+2025-11-26 14:58:38,389 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082505,"headline":"RBC Capital Maintains Outperform on Blue Owl Capital, Lowers Price Target to $14","summary":"RBC Capital  analyst Kenneth S. Lee   maintains Blue Owl Capital (NYSE:OBDC) with a Outperform and lowers the price target from $16 to $14.","author":"Benzinga Newsdesk","
+2025-11-26 14:58:38,389 [DEBUG] ws-message-handler: News message parsed | id=49082505 symbols=['OBDC']
+2025-11-26 14:58:38,389 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 14:58:38,389 [DEBUG] pipeline: Handling news ID=49082505
+2025-11-26 14:58:38,390 [DEBUG] pipeline: Hash computed: 57d6de571f61265c747984bc7c48d086c8e43215b739a4d1a4664bbb9df0ff38
+2025-11-26 14:58:38,390 [INFO] pipeline: News received | id=49082505 | hash=57d6de571f61
+2025-11-26 15:00:21,939 [DEBUG] ws-message-handler: Raw WS message received: [{"T":"n","id":49082553,"headline":"CollPlant Biotechnologies shares are trading lower after the company reported worse-than-expected Q3 financial results.","summary":"","author":"Benzinga Newsdesk","created_at":"2025-11-26T14:00:20Z","updated_at":"2025-11-26T14:00:21Z","url":"https://www.benzinga.c
+2025-11-26 15:00:21,940 [DEBUG] ws-message-handler: News message parsed | id=49082553 symbols=['CLGN']
+2025-11-26 15:00:21,940 [DEBUG] ws-message-handler: Message rate = 1/window(10s)
+2025-11-26 15:00:21,940 [DEBUG] pipeline: Handling news ID=49082553
+2025-11-26 15:00:21,940 [DEBUG] pipeline: Hash computed: d9b30edb9c31601eb1c5103c46f4277faa3dc0984d3ac1c8de2253ca452259db
+2025-11-26 15:00:21,940 [INFO] pipeline: News received | id=49082553 | hash=d9b30edb9c31

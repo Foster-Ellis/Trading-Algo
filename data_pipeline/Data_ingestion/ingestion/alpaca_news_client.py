@@ -20,6 +20,7 @@ MAX_RECONNECT_DELAY = int(os.getenv("MAX_RECONNECT_DELAY", "60"))
 WS_PING_INTERVAL = int(os.getenv("WS_PING_INTERVAL", "20"))
 WS_PING_TIMEOUT = int(os.getenv("WS_PING_TIMEOUT", "10"))
 WS_CLOSE_TIMEOUT = int(os.getenv("WS_CLOSE_TIMEOUT", "10"))
+WS_MAX_RETRIES = int(os.getenv("WS_MAX_RETRIES", "0"))
 
 logger = get_logger("ws-client")
 
@@ -41,34 +42,37 @@ class AlpacaNewsClient:
     async def on_open(self):
         self.debug("WS opened → Authenticating")
 
-        try:
-            await self.ws.send(json.dumps({
-                "action": "auth",
-                "key": API_KEY,
-                "secret": API_SECRET
-            }))
+        # Send auth request
+        await self.ws.send(json.dumps({
+            "action": "auth",
+            "key": API_KEY,
+            "secret": API_SECRET
+        }))
 
-            auth_response = await asyncio.wait_for(self.ws.recv(), timeout=10)
-            logger.debug(f"Auth response: {auth_response}")
+        # First response is ALWAYS "connected"
+        first = await asyncio.wait_for(self.ws.recv(), timeout=10)
+        logger.debug(f"Auth step 1: {first}")
 
-        except asyncio.TimeoutError:
-            logger.error("Authentication timeout")
-            raise
+        # Second response is the actual authentication result
+        second = await asyncio.wait_for(self.ws.recv(), timeout=10)
+        logger.debug(f"Auth step 2: {second}")
 
-        try:
-            await self.ws.send(json.dumps({
-                "action": "subscribe",
-                "news": ["*"]
-            }))
+        if '"msg":"authenticated"' not in second:
+            logger.error("Authentication failed")
+            raise Exception("AUTH_FAILED")
 
-            sub_response = await asyncio.wait_for(self.ws.recv(), timeout=10)
-            logger.debug(f"Subscription response: {sub_response}")
+        # Subscribe
+        await self.ws.send(json.dumps({
+            "action": "subscribe",
+            "news": ["*"]
+        }))
 
-        except asyncio.TimeoutError:
-            logger.error("Subscription timeout")
-            raise
+        sub_resp = await asyncio.wait_for(self.ws.recv(), timeout=10)
+        logger.debug(f"Subscribe response: {sub_resp}")
 
         logger.info("Authenticated + Subscribed to *")
+
+
 
     async def on_message(self, raw):
         await self.handler.handle(raw)
@@ -81,6 +85,13 @@ class AlpacaNewsClient:
 
     async def run(self):
         while self.running:
+            if WS_MAX_RETRIES > 0 and self.retry_count >= WS_MAX_RETRIES:
+                logger.critical(
+                    f"Max retries reached ({WS_MAX_RETRIES}). Stopping WS client."
+                )
+                self.running = False
+                break
+            
             try:
                 logger.debug(f"WS connecting → {NEWS_URL}")
 
@@ -92,10 +103,9 @@ class AlpacaNewsClient:
                 ) as socket:
 
                     self.ws = socket
-                    self.retry_count = 0
-
                     await self.on_open()
 
+                    self.retry_count = 0
                     async for message in self.ws:
                         await self.on_message(message)
 
