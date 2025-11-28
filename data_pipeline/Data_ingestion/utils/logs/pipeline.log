@@ -257,3 +257,25 @@
 2025-11-26 15:00:21,940 [DEBUG] pipeline: Handling news ID=49082553
 2025-11-26 15:00:21,940 [DEBUG] pipeline: Hash computed: d9b30edb9c31601eb1c5103c46f4277faa3dc0984d3ac1c8de2253ca452259db
 2025-11-26 15:00:21,940 [INFO] pipeline: News received | id=49082553 | hash=d9b30edb9c31
+2025-11-26 16:36:07,343 [INFO] pipeline: PipelineController initialized.
+2025-11-26 16:36:07,958 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 16:36:09,540 [INFO] pipeline: News received | id=49086428 | hash=4acfe5b68a6c
+2025-11-26 16:37:03,201 [INFO] pipeline: News received | id=49086453 | hash=148ef1d696e0
+2025-11-26 16:38:12,953 [INFO] pipeline: News received | id=49086498 | hash=118ef5c1e206
+2025-11-26 16:38:18,963 [INFO] pipeline: News received | id=49086505 | hash=2b3861fb0a15
+2025-11-26 16:38:38,643 [INFO] pipeline: PipelineController initialized.
+2025-11-26 16:38:39,213 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 16:38:52,600 [INFO] pipeline: News received | id=49086523 | hash=67b94fe26c72
+2025-11-26 16:39:23,586 [INFO] pipeline: News received | id=49086523 | hash=67b94fe26c72
+2025-11-26 16:40:19,639 [INFO] pipeline: PipelineController initialized.
+2025-11-26 16:40:20,210 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 16:40:22,738 [INFO] pipeline: News received | id=49086583 | hash=40f550de694cba59c1d4528a2df8564396d2ec9f6deaa21ee9ea7084025baf2b
+2025-11-26 16:40:47,528 [INFO] pipeline: PipelineController initialized.
+2025-11-26 16:40:48,078 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 16:40:58,406 [INFO] pipeline: News received | id=49086596 | hash=816c90605b6bbad0f95568d732208c78130c8cf10497787271a416ff7f7a3aef
+2025-11-26 16:41:05,542 [INFO] pipeline: PipelineController initialized.
+2025-11-26 16:41:06,095 [INFO] ws-client: Authenticated + Subscribed to *
+2025-11-26 16:41:58,483 [INFO] pipeline: News received | id=49086623 | hash=966d4eeca886
+2025-11-26 16:42:54,140 [INFO] pipeline: News received | id=49086667 | hash=2e02ef6f2263
+2025-11-26 16:43:00,111 [INFO] pipeline: News received | id=49086674 | hash=7cdc880d0c18
+2025-11-26 16:43:30,943 [INFO] pipeline: News received | id=49086709 | hash=0c5a1a5cf132

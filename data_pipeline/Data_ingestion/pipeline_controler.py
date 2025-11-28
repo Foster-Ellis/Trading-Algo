@@ -11,6 +11,7 @@ class PipelineController:
     def __init__(self):
         logger.info("PipelineController initialized.")
         self.ws_client = AlpacaNewsClient(controller=self)
+        self.ch_client = 
 
     async def handle_news(self, msg: dict):
         logger.debug(f"Handling news ID={msg.get('id')}")

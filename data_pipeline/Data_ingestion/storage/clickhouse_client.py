@@ -1,32 +1,32 @@
-import asyncio
 import os
+import asyncio
 import clickhouse_connect
 from utils.logging_config import get_logger
 from dotenv import load_dotenv
 
 load_dotenv()
 
-host = os.getenv("CH_HOST", "localhost")
-port = int(os.getenv("CH_PORT", "8123"))
-user = os.getenv("CH_USER", "default")
-password = os.getenv("CH_PASSWORD", "")
+CH_HOST = os.getenv("CLICKHOUSE_HOST", "localhost")
+CH_PORT = int(os.getenv("CLICKHOUSE_PORT", "8123"))
+CH_USER = os.getenv("CLICKHOUSE_USER")
+CH_PASSWORD = os.getenv("CLICKHOUSE_PASSWORD")
 
 logger = get_logger("ch-client")
 
 
 class ClickHouseClient:
-    """
-    Async ClickHouse client using clickhouse-connect.
-    Built for reliability inside an async ingestion pipeline.
-    """
 
     def __init__(self):
-        
+        logger.info(f"Connecting to ClickHouse at {CH_HOST}:{CH_PORT}")
+        self.client = clickhouse_connect.get_client(
+            host=CH_HOST,
+            port=CH_PORT,
+            username=CH_USER,
+            password=CH_PASSWORD,
+        )
 
-        self.client = None
-        self.host = host
-        self.port = port
-        self.user = user
-        self.password = password
+    def execute(self, query, params=None):
+        return self.client.query(query, parameters=params)
 
-        logger.info(f"ClickHouseClient initialized for {host}:{port}")
+    def insert(self, table, rows, columns):
+        return self.client.insert(table, rows, column_names=columns)

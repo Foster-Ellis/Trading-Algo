@@ -1,6 +1,7 @@
 import json
 import time
 from datetime import datetime
+import asyncio
 import os
 from dotenv import load_dotenv
 
@@ -24,7 +25,7 @@ class AlpacaMessageHandler:
     # ---------------------------------------------------------
     # Rate monitoring
     # ---------------------------------------------------------
-    def _track_rate(self):
+    async def _track_rate(self):
         now = time.time()
         self.message_times.append(now)
 
@@ -41,7 +42,7 @@ class AlpacaMessageHandler:
                 f"(cooling down for {MESSAGE_RATE_COOLDOWN}s)"
             )
             if MESSAGE_RATE_COOLDOWN > 0:
-                time.sleep(MESSAGE_RATE_COOLDOWN)
+                await asyncio.sleep(MESSAGE_RATE_COOLDOWN)
 
     # ---------------------------------------------------------
     # Message handler (called from alpaca_news_client)
@@ -69,7 +70,7 @@ class AlpacaMessageHandler:
             logger.debug(f"News message parsed | id={msg.get('id')} symbols={msg.get('symbols')}")
 
             msg["ingested_at"] = datetime.utcnow().isoformat()
-            self._track_rate()
+            await self._track_rate()
 
             try:
                 await self.controller.handle_news(msg)
